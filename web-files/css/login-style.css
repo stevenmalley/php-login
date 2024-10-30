@@ -1,0 +1,267 @@
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+  font-size: 16px;
+}
+body {
+  margin: 0;
+	background-color: #f3f4f7;
+}
+.FormResponseMessage {
+  color: red;
+  padding: 0 20px;
+}
+.accountForm {
+  max-width: 400px;
+  background-color: #ffffff;
+  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+  margin: 100px auto;
+}
+.accountForm h1 {
+  text-align: center;
+  color: #5b6574;
+  font-size: 24px;
+  padding: 20px 0 20px 0;
+  border-bottom: 1px solid #dee0e4;
+}
+.accountForm form {
+  padding-top: 20px;
+}
+.accountForm form label {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  float: left;
+  background-color: #3274d6;
+  color: #ffffff;
+}
+.accountForm form input[type="password"], .accountForm form input[type="text"], .accountForm form input[type="email"] {
+  width: calc(100% - 51px);
+  height: 50px;
+  border: 1px solid #dee0e4;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-bottom: 20px;
+  padding: 0 15px;
+}
+.accountForm form input[type="password"]:invalid, .accountForm form input[type="text"]:invalid, .accountForm form input[type="email"]:invalid {
+  border: 1px solid red;
+}
+.accountForm form input[type="submit"], .accountForm form a.cancelButton {
+  display: inline-block;
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+  border: 0;
+  cursor: pointer;
+  font-weight: bold;
+  color: #ffffff;
+  transition: background-color 0.2s;
+  letter-spacing: 0.07em;
+  text-decoration: none;
+  text-align: center;
+}
+.accountForm form input[type="submit"] {
+  background-color: #3274d6;
+}
+.accountForm form input[type="submit"]:hover {
+  background-color: #2868c7;
+  transition: background-color 0.2s;
+}
+.accountForm form a.cancelButton {
+  background-color: #616161;
+}
+.accountForm form a.cancelButton:hover {
+  background-color: #515151;
+  transition: background-color 0.2s;
+}
+.PasswordFooter {
+  margin-top: -15px;
+}
+.PasswordFooter a {
+  font-size: 0.85em;
+}
+.FormFooter {
+  padding: 20px;
+}
+.navtop {
+	background-color: #2f3947;
+	width: 100%;
+	border: 0;
+}
+.navtop > div {
+	display: flex;
+  flex-wrap: wrap;
+	margin: 0 auto;
+	max-width: 1000px;
+	height: 100%;
+}
+.navtop > div h1, .navtop > div a {
+	display: inline-flex;
+	align-items: center;
+  padding: 0 2%;
+}
+.navtop > div h1 {
+	flex: 1;
+  margin: 0 .5rem;
+}
+.navtop div h1 a {
+  flex: 1;
+	font-size: 24px;
+	padding: 0;
+	margin: 0;
+	color: #eaebed;
+	font-weight: normal;
+  text-decoration: none;
+}
+.navtop div a.nav {
+	padding: 0 20px;
+	text-decoration: none;
+	color: #c1c4c8;
+	font-weight: bold;
+}
+.navtop div a.nav i {
+	padding: 2px 8px 0 0;
+}
+.navtop div a:hover {
+	color: #eaebed;
+}
+.navtop .navLinks {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px 0;
+}
+
+
+.content {
+	max-width: 1000px;
+	margin: 0 auto;
+  padding: 0 2%;
+}
+
+
+.accountContent h2 {
+	margin: 0;
+	padding: 25px 0;
+	font-size: 22px;
+	border-bottom: 1px solid #e0e0e3;
+	color: #4a536e;
+}
+.accountContent > p, .accountContent > div {
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+	margin: 25px auto;
+	padding: 25px;
+	background-color: #fff;
+}
+.accountContent > p table td, .accountContent > div table td {
+	padding: 5px;
+}
+.accountContent > p table td:first-child, .accountContent > div table td:first-child {
+	font-weight: bold;
+	color: #4a536e;
+	padding-right: 15px;
+}
+.accountContent > div p {
+	padding: 5px;
+	margin: 0 0 10px 0;
+}
+
+.accountButton {
+  padding: 5px 15px;
+  background-color: #4a536e;
+  border-radius: 5px;
+  margin-top: 20px;
+  display: inline-block;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 1px 1px 3px 1px #aaa;
+}
+.accountButton:hover {
+  background-color: #313a50;
+}
+
+
+.accountContent table td:last-child {
+  text-align: right;
+}
+.accountContent button {
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+.accountContent button:hover {
+  background-color: #e0e0e0;
+}
+
+
+
+.ChangeDataModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  justify-content: center;
+  align-items: center;
+}
+.changeDataModalWindow {
+  display: none;
+  background: white;
+  border-radius: 5px;
+  width: 80%;
+  max-width: 600px;
+  min-height: 100px;
+  padding: 4vw;
+  overflow-y: auto;
+  max-height: 100%;
+}
+.ChangeDataModal.displayModal {
+  display: flex;
+}
+.changeDataModalWindow.displayModal {
+  display: block;
+}
+.changeDataModalWindow h2 {
+  font-size: 1.2rem;
+}
+.changeDataModalWindow div {
+  margin: 2vw 0;
+}
+.changeDataResponse {
+  color: red;
+}
+
+
+/* PROFILE PAGE Change Data inputs */
+div.form-floating {
+  height: 4rem;
+}
+input.form-control {
+  padding: 1.4rem 0.75rem 0.6rem;
+  border-radius: 10px;
+  border-width: 1px;
+  display: block;
+  max-width: 400px;
+  font-size: 1rem;
+  color: #292929;
+}
+input.form-control::placeholder {
+  display: none;
+  visibility: hidden;
+}
+input.form-control + label {
+  display: inline-block;
+  color: #777;
+  transform: translate(.5rem, -2.2rem);
+  transition: all 0.2s ease-out;
+  cursor: text;
+}
+input.form-control:focus + label,
+input.form-control:not(:placeholder-shown) + label  {
+  font-size: .8rem;
+  transform: translate(1.25rem, -3.4rem);
+}
