@@ -1,8 +1,7 @@
 <?php
 
   $emailServer = "mywebsite.co.uk";
-  $protocol = "https://";
-  $server = "mywebsite.co.uk";
+  $homePath = "https://mywebsite.co.uk";
 
 
 

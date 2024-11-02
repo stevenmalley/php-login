@@ -64,6 +64,7 @@ if (!isset($_SESSION['loggedin'])) {
           $stmt->bind_param('si', $_POST['email'], $_SESSION['id']);
           $stmt->execute();
         
+          $_SESSION['email'] = $_POST['email'];
           $_SESSION['message'] = "Your email address has been updated.";
           respond($_SESSION['message'],true);
         } else {

@@ -41,7 +41,7 @@ if ($stmt = $con->prepare('SELECT id, activated, activation_code FROM accounts W
         $subject = $appName.': reset your password';
         $headers = 'From: ' . $from . "\r\n" . 'Reply-To: ' . $from . "\r\n" . 'X-Mailer: PHP/' . phpversion() . "\r\n" . 'MIME-Version: 1.0' . "\r\n" . 'Content-Type: text/html; charset=UTF-8' . "\r\n";
         
-        $reset_password_link = $protocol.$server.'/resetPassword.php?email=' . $_POST['email'] . '&code=' . $uniqid;
+        $reset_password_link = $homePath.'/resetPassword.php?email=' . $_POST['email'] . '&code=' . $uniqid;
         $message = '<p>Please click the following link to reset your '.$appName.' password: <a href="' . $reset_password_link . '">' . $reset_password_link . '</a></p><p>Ignore this email if you did not reset your '.$appName.' password.</p>';
         mail($_POST['email'], $subject, $message, $headers);
 

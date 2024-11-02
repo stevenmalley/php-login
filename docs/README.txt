@@ -14,12 +14,17 @@ passwords must be 8-20 characters long
 
 a site involving any number of pages and nested subdirectories can be created and integrated within the login system's file structure, or the login system can be used as an API for a separate application.
 
+persistent sessions:
+upon logging in, the session cookie ID is saved to the account's DB entry, and the date is saved.
+when a user with a cookie with matching ID visits the site, if they are within a certain time of the last login, they are automatically logged in.
+
 
 
 HOW TO USE
 
 Set up DB using docs/sql/db.sql.
 Create login-control/config.php with DB credentials following the pattern of login-control/config-EXAMPLE.php.
+  $homePath must be the full path to the application's root directory
 
 Update login-components/options.php with:
 - the name of the app

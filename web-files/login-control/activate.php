@@ -47,6 +47,11 @@ if ($_POST['code']) {
 				$stmt->execute();
 				
         session_start();
+
+        if ($_SESSION['loggedin'] && $new_email) {
+          $_SESSION['email'] = $new_email;
+        }
+
         $_SESSION['message'] = $new_email ?
           "Email address updated; from now on, you must use the new email address to log in." :
           "Registration successful; your account is now activated. You may now log in.";

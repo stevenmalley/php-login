@@ -31,13 +31,21 @@ if ($stmt = $con->prepare("SELECT id, username, email, password, activated FROM 
       if ($activated) {
         // Verification success! User has logged-in!
 
+        ini_set('session.cookie_lifetime', $login_duration);
         session_start();
         session_regenerate_id();
-        $_SESSION['loggedin'] = TRUE;
-        $_SESSION['username'] = $username;
-        $_SESSION['email'] = $email;
-        $_SESSION['id'] = $id;
-        respond("You have successfully logged in.",true);
+        $sessionID = session_id();
+
+        if ($stmt = $con->prepare("UPDATE accounts SET login_code = ?, last_login = NOW() WHERE $loginID = ?")) {
+          $stmt->bind_param('ss', $sessionID, $accountID);
+          $stmt->execute();
+
+          include('../login-control/login.php');
+          respond("You have successfully logged in.",true);
+
+        } else {
+          respond("Could not prepare statement");
+        }
       } else {
         // TODO option to send another activation email
         respond('Account not yet activated. Please check your email and click the link. To re-send the activation email, click "forgotten password?" below.');
